@@ -20,15 +20,19 @@ int main() {
     std::cout << "Enter a positive number: ";
     std::cin >> userAsString;
 
-    // Check if the user's age matches the grandparents' criteria
+    // Use a while loop to add all the integers from 0
     try {
-        userAsNumber = std::stoi(userAsString);
-        while (loopCounter < userAsNumber) {
-            loopCounter = loopCounter + 1;
-            sum = loopCounter + sum;
-            std::cout << "The sum is: " << sum << std::endl;
+        int userAsNumber = std::stoi(userAsString);
+        if (userAsNumber > 0) {
+                while (loopCounter < userAsNumber) {
+                loopCounter = loopCounter + 1;
+                sum = loopCounter + sum;
+                std::cout << "The sum is: " << sum << std::endl;
+            }
+        } else {
+            std::cout << "Please enter a positive number" << userAsNumber << std::endl;
+            std::cout << "Final sum: " << sum << std::endl;
         }
-        std::cout << "Final sum: " << sum << std::endl;
     } catch (std::invalid_argument) {
         std::cout << "That was not a valid number ";
     }
